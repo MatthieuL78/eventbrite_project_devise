@@ -1,28 +1,18 @@
 class EventAttendeesController < ApplicationController
   before_action :set_event_attendee, only: [:show, :edit, :update, :destroy]
 
-  # GET /event_attendees
-  # GET /event_attendees.json
   def index
     @event_attendees = EventAttendee.all
   end
 
-  # GET /event_attendees/1
-  # GET /event_attendees/1.json
-  def show
-  end
+  def show() end
 
-  # GET /event_attendees/new
   def new
     @event_attendee = EventAttendee.new
   end
 
-  # GET /event_attendees/1/edit
-  def edit
-  end
+  def edit() end
 
-  # POST /event_attendees
-  # POST /event_attendees.json
   def create
     @event_attendee = EventAttendee.new(event_attendee_params)
 
@@ -37,8 +27,6 @@ class EventAttendeesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /event_attendees/1
-  # PATCH/PUT /event_attendees/1.json
   def update
     respond_to do |format|
       if @event_attendee.update(event_attendee_params)
@@ -51,8 +39,6 @@ class EventAttendeesController < ApplicationController
     end
   end
 
-  # DELETE /event_attendees/1
-  # DELETE /event_attendees/1.json
   def destroy
     @event_attendee.destroy
     respond_to do |format|
@@ -62,13 +48,12 @@ class EventAttendeesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event_attendee
-      @event_attendee = EventAttendee.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_attendee_params
-      params.require(:event_attendee).permit(:attendee_id, :event_id)
-    end
+  def set_event_attendee
+    @event_attendee = EventAttendee.find(params[:id])
+  end
+
+  def event_attendee_params
+    params.require(:event_attendee).permit(:attendee_id, :event_id)
+  end
 end

@@ -13,8 +13,7 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  def edit
-  end
+  def edit() end
 
   def create
     respond_to do |format|
@@ -49,22 +48,26 @@ class EventsController < ApplicationController
   end
 
   private
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    def event_params_create
-      @event =  Event.new(params.require(:event).permit(:name, :date, :place, :price, :description))
-      @event.creator = current_user
-      @event
-    end
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def event_params_update
-      params.require(:event).permit(:name, :date, :place, :price, :description)
-    end
+  def event_params_create
+    @event = Event.new(params.require(:event).permit(
+      :name, :date, :place, :price, :description))
+    @event.creator = current_user
+    @event
+  end
 
-    def event_check_current_user
-      true if @event.creator == current_user
-    end
+  def event_params_update
+    params.require(:event).permit(
+      :name, :date, :place, :price, :description)
+  end
 
+  def event_check_current_user
+    true if @event.creator == current_user
+  end
+
+  def event_check_current_user_index() end
 end
