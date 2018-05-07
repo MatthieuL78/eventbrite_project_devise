@@ -77,6 +77,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
+gem 'stripe'
 
 group :development, :test do
   gem 'sqlite3'
