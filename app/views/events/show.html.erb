@@ -4,26 +4,33 @@
 		<p id="notice"><%= notice %></p>
 
 		<p>
-		  <strong>Name:</strong>
+		  <strong>Evenement:</strong>
 		  <%= @event.name %>
 		</p>
 
 		<p>
-		  <strong>Place:</strong>
+		  <strong>Date:</strong>
+		  <%= @event.date.strftime("%d/%m/%Y") %>
+		</p>
+
+		<p>
+		  <strong>Lieu:</strong>
 		  <%= @event.place %>
 		</p>
 
 		<p>
-		  <strong>:</strong>
+		  <strong>Description:</strong>
 		  <%= @event.description %>
 		</p>
 
 		<p>
-		  <strong>Creator:</strong>
+		  <strong>Crée part:</strong>
 		  <%= @event.creator.username %>
 		</p>
-
-		<%= link_to 'Edit', edit_event_path(@event) %> |
-		<%= link_to 'Back', events_path %>
+		<% if @check_user %>
+			<%= link_to 'Editer', edit_event_path(@event) %> |
+			<%= link_to 'Supprimer', @event, method: :delete, data: { confirm: 'Vous confirmez?' } %> |
+		<% end %>
+		<%= link_to 'Revenir aux évènements', events_path %>
 	</div>
 </div>

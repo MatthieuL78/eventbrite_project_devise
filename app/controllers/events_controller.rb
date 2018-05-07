@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @check_user = event_check_current_user
   end
 
   def new
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @event.update(event_params)
+      if @event.update(event_params_update)
         format.html { redirect_to @event, notice: 'Evenement mis a jour.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -57,4 +58,14 @@ class EventsController < ApplicationController
       @event.creator = current_user
       @event
     end
+
+    def event_params_update
+      params.require(:event).permit(:name, :date, :place, :description)
+    end
+
+    def event_check_current_user
+      true if @event.creator == current_user
+    end
+
+
 end
