@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="jumbotron">
+		<h1>Bienvenue <%= current_user.username %></h1>
+		<div class="profile-buttons">
+			<p><%= link_to "Editer le profil", edit_user_registration_path, :class => 'btn profile-btn' %>
+			<%= link_to "Creer un évènement", new_event_path, :class => 'btn profile-btn' %></p>
+		</div>
+		<table class="table">
+			<tr>
+				<th>Nom de l'évènement</th>
+				<th>Nombre de participant</th>
+				<th>Date de creation</th>
+				<th>Lien</th>
+			</tr>
+			<% Event.all.each do |event| %>
+				<% if event.creator_id == current_user.id %>
+				<tr>
+					<td><%= event.name %></td>
+					<td><%= event.attendees.count %></td>
+					<td><%= event.date %></td>
+					<td><%= link_to "Voir l'évènement", event_path(event.id) %></td>
+				</tr>
+				<% end %>
+			<% end %>
+		</table>
+	</div>
+</div>
