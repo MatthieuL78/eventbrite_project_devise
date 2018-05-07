@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+.nav-color{
+	color: white;
+	font-weight: bold;
+}
+
+h1{
+	text-align: center;
+}
+
+.footer-first-text{
+	color: white;
+}
+
+header{
+	margin-bottom: 50px;
+}
+
+h3{
+	text-align: center;
+}
+
+.new_regis{
+	text-align: center;
+}
+
+.new_session{
+	text-align: center;
+}
+
+.fgt_password{
+	text-align: center;
+	margin-bottom: 65px;
+}
+
+input{
+	margin-bottom: 15px;
+}
+
+.profile-btn{
+	color: #000;
+}
+
+.profile-buttons{
+	text-align: center;
+}

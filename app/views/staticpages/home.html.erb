@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="jumbotron">
+		<h1>Eventbrite like</h1>
+		<% if user_signed_in? %>
+			<h2>Les 3 derniers évènements :</h2>
+			<table class="table">
+				<tr>
+					<th>Nom de l'évènement</th>
+					<th>Contenu de l'évènement</th>
+					<th>Nombre de commentaire</th>
+					<th>Lien</th>
+				</tr>
+				
+			</table>
+			<h2>Les 3 évènements les plus populaires :</h2>
+			<table class="table">
+				<tr>	
+					<th>Nom du gossip</th>
+					<th>Contenu du gossip</th>
+					<th>Nombre de commentaire</th>
+					<th>Lien</th>
+				</tr>
+			
+			</table>
+		<% end %>
+	</div>
+	<% unless user_signed_in? %>
+		<div class="jumbotron">
+			<h3>Inscrivez vous ou connectez vous pour suivre les évènements!</h3>
+		</div>
+	<% end %>
+</div>
