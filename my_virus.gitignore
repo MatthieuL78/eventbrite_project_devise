@@ -1,0 +1,4 @@
+.env
+
+require "stripe"
+stripe.api_key = "sk_test_0fZsAuiUaeY1QqYb9Gt9iL4Q"
