@@ -54,18 +54,17 @@ class EventsController < ApplicationController
     end
 
     def event_params_create
-      @event =  Event.new(params.require(:event).permit(:name, :date, :place, :description))
+      @event =  Event.new(params.require(:event).permit(:name, :date, :place, :price, :description))
       @event.creator = current_user
       @event
     end
 
     def event_params_update
-      params.require(:event).permit(:name, :date, :place, :description)
+      params.require(:event).permit(:name, :date, :place, :price, :description)
     end
 
     def event_check_current_user
       true if @event.creator == current_user
     end
-
 
 end

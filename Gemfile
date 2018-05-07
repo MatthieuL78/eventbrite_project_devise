@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails'
 gem 'devise'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'puma'

@@ -21,6 +21,8 @@ RSpec.describe "events/new", type: :view do
 
       assert_select "input[name=?]", "event[]"
 
+      assert_select "input[name=?]", "event[price]"
+
       assert_select "input[name=?]", "event[creator_id]"
     end
   end
