@@ -70,7 +70,7 @@ class EventsController < ApplicationController
     end
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to subscribe_path(@event.id)
+      redirect_to event_path
   end
 
   def create_customer
