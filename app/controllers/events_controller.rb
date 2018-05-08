@@ -62,6 +62,8 @@ class EventsController < ApplicationController
     @amount = @event.price
     @customer = create_customer
     @charge = create_charge
+    p @customer
+    p @charge
     if @charge.save
       event_subscribe
     end
