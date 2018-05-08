@@ -86,7 +86,8 @@ class EventsController < ApplicationController
 
   def event_params_create
     @event = Event.new(params.require(:event).permit(
-      :name, :date, :place, :price * 100, :description))
+      :name, :date, :place, :price, :description))
+    @event.price *= 100
     @event.creator = current_user
     @event
   end
