@@ -70,7 +70,9 @@ class EventsController < ApplicationController
       :description => 'Votre paiement',
       :currency =>    'usd'
     )
-    
+    if charge.save
+      event_subscribe
+    end
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to subscribe_show_path(@event.id)
