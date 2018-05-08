@@ -60,7 +60,9 @@ class EventsController < ApplicationController
 
   def create_payement
     @amount = @event.price
+    redirect_to event_path
     @customer = create_customer
+    redirect_to event_path
     @charge = create_charge
     redirect_to event_path
     if @charge.save
