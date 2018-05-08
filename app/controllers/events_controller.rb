@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :subscribe, :create_payement, :show_payement]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :subscribe, :create_payement, :show_payement, :payement_succeed]
 
   def index
     @events = Event.all
@@ -58,13 +58,17 @@ class EventsController < ApplicationController
 
   def show_payement() end
 
+  def payement_succeed() 
+    @event = event_subscribe 
+  end
+
   def create_payement
     @amount = @event.price
     @customer = create_customer
     charge = create_charge
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to show_payement_path(@event.id)
+      redirect_to payement_succeed_path(@event.id)
   end
 
   def create_customer
