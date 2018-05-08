@@ -60,28 +60,20 @@ class EventsController < ApplicationController
 
   def create_payement
     @amount = @event.price
-    @customer = create_customer
-    @charge = create_charge
-    event_subscribe
-    # rescue Stripe::CardError => e
-    #   flash[:error] = e.message
-    #   redirect_to subscribe_show_path(@event.id)
-  end
-
-  def create_customer
-    Stripe::Customer.create(
+    customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
     )
-  end
-
-  def create_charge
-    Stripe::Charge.create(
+    charge = Stripe::Charge.create(
       customer:    @customer.id,
       amount:      @amount,
-      description: 'Rails Stripe customer',
+      description: 'Votre paiement',
       currency:    'usd'
     )
+    
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to subscribe_show_path(@event.id)
   end
 
   private
