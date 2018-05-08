@@ -23,14 +23,24 @@
           <tr>
             <td><%= link_to "#{event.name}", event %></td>
             <td><%= event.date.strftime("%d/%m/%Y") %></td>
-            <td><%= event.price %></td>
+            <% if event.price == 0 %>
+              <td>Gratuit !</td>
+            <% else %>
+              <td><%= event.price %></td>
+            <% end %>
             <td><%= event.place %></td>
             <td><%= event.description %></td>
             <td><%= event.creator.username %></td>
-            <% if @check_user %>
-              <td><%= link_to "Participer" %></td>
-            <% else %>
+            <% if current_user == event.creator %>
               <td>Hôte</td>
+            <% else %>
+              <td><%= form_for(:session, url: subscribe_path(event.id)) do |session_form| %>
+                <% if event.attendees.include?(current_user) %>
+                  <%= session_form.submit "Deja inscrit", disabled: true %>
+                <% else %>
+                  <%= session_form.submit "S'inscrire" %>
+                <% end %>
+              <% end %></td>
             <% end %>
           </tr>
         <% end %>

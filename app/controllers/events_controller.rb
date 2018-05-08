@@ -47,6 +47,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def subscribe
+    @event = event_subscribe
+    redirect_to events_path
+  end
+
   private
 
   def set_event
@@ -70,4 +75,8 @@ class EventsController < ApplicationController
   end
 
   def event_check_current_user_index() end
+
+  def event_subscribe
+    Event.find(params[:id]).attendees << current_user
+  end
 end
