@@ -2,23 +2,23 @@
 	<div class="jumbotron">
 		<h1>Eventbrite like</h1>
 		<% if user_signed_in? %>
-			<h2>Les 3 derniers évènements :</h2>
+			<h2>Les 3 derniers evenements :</h2>
 			<table class="table">
 				<tr>
-					<th>Nom de l'évènement</th>
-					<th>Contenu de l'évènement</th>
-					<th>Nombre de commentaire</th>
-					<th>Lien</th>
+					<th>Evenement</th>
+					<th>Description</th>
+					<th>Participants</th>
+					<th>Voir</th>
 				</tr>
 				
 			</table>
 			<h2>Les 3 évènements les plus populaires :</h2>
 			<table class="table">
 				<tr>	
-					<th>Nom du gossip</th>
-					<th>Contenu du gossip</th>
-					<th>Nombre de commentaire</th>
-					<th>Lien</th>
+					<th>Evenement</th>
+					<th>Description</th>
+					<th>Participant</th>
+					<th>Voir</th>
 				</tr>
 			
 			</table>
@@ -26,7 +26,7 @@
 	</div>
 	<% unless user_signed_in? %>
 		<div class="jumbotron">
-			<h3>Inscrivez vous ou connectez vous pour suivre les évènements!</h3>
+			<h3>Inscrivez vous ou connectez vous pour suivre les evenements!</h3>
 		</div>
 	<% end %>
 </div>

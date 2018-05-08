@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :subscribe, :create_payement, :show_payement]
 
   def index
     @events = Event.all
@@ -48,8 +48,40 @@ class EventsController < ApplicationController
   end
 
   def subscribe
-    @event = event_subscribe
-    redirect_to events_path
+    if @event.price == 0
+      @event = event_subscribe 
+      redirect_to event_path
+    else
+      redirect_to subscribe_show_path(@event.id)
+    end
+  end
+
+  def show_payement() end
+
+  def create_payement
+    Stripe.api_key = 'sk_test_BQokikJOvBiI2HlWgH4olfQ2'
+    @amount = @event.price
+    @customer = create_customer
+    charge = create_charge
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to show_payement_path(@event.id)
+  end
+
+  def create_customer
+    Stripe::Customer.create(
+      email: params[:stripeEmail],
+      source: params[:stripeToken]
+    )
+  end
+
+  def create_charge
+    Stripe::Charge.create(
+      customer:    @customer.id,
+      amount:      @amount,
+      description: 'Rails Stripe customer',
+      currency:    'usd'
+    )
   end
 
   private
