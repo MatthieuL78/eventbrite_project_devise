@@ -68,7 +68,7 @@ class EventsController < ApplicationController
     charge = create_charge
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to payement_succeed_path(@event.id)
+      redirect_to event_path(@event.id)
   end
 
   def create_customer

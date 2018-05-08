@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   post 'event_payement/:id', to: 'events#subscribe', as: :subscribe	
   get 'event_payement/:id', to: 'events#show_payement', as: :subscribe_show
   get 'event_payement/:id', to: 'events#create_payement', as: :payement_create
-  get 'payement_succeed/:id', to: 'events#payement_succeed', as: :payement_succeed	
   resources :events
   devise_for :users
   resources :users, only: [:show]
