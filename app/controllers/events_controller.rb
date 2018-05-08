@@ -60,17 +60,17 @@ class EventsController < ApplicationController
 
   def create_payement
     @amount = @event.price
-    redirect_to event_path
     @customer = create_customer
-    redirect_to event_path
     @charge = create_charge
-    redirect_to event_path
+    if @charge.save
+      event_subscribe
+    end
     if @charge.save
       event_subscribe
     end
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to event_path
+      redirect_to subscribe_show_path(@event.id)
   end
 
   def create_customer

@@ -22590,3 +22590,195 @@ Processing by EventsController#show_payement as HTML
 Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-05-08 22:16:44 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/malus/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:34
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 5], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 6], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 8], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 10], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 15], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 16], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 17], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 21], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 22], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 23], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  Rendered events/index.html.erb within layouts/application (70.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 305ms (Views: 289.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/event_payement/6" for 127.0.0.1 at 2018-05-08 22:16:47 +0200
+Processing by EventsController#subscribe as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5C3wIYuj+geNMVY4u6Awk1GdNSjZiZkXiJVBJOC+KwGBv2Mjv8qpYwvRUqj3noPFBil3tub01Bz2vMLoCfhu8A==", "commit"=>"S'inscrire", "id"=>"6"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:92
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.2ms)
+
+
+
+NoMethodError - undefined method `subscribe_show_path' for #<EventsController:0x007f3814050e30>
+Did you mean?  subscribe_path:
+  app/controllers/events_controller.rb:57:in `subscribe'
+
+Started POST "/__better_errors/f64cb119b62486ef/variables" for 127.0.0.1 at 2018-05-08 22:16:47 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-08 22:19:17 +0200
+Processing by StaticpagesController#home as HTML
+  Rendering staticpages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/staticpages/home.html.erb:4
+  Rendered staticpages/home.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-05-08 22:19:19 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:34
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 5], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 6], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 8], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 10], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 15], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 16], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 17], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 21], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 22], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "event_attendees" ON "users"."id" = "event_attendees"."attendee_id" WHERE "event_attendees"."event_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["event_id", 23], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:38
+  Rendered events/index.html.erb within layouts/application (50.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 77ms (Views: 69.7ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/event_payement/6" for 127.0.0.1 at 2018-05-08 22:19:20 +0200
+Processing by EventsController#subscribe as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K/oK4HpIHo3UjbQAKeRL7pMJ7Bykd30G8WridQeFadRX9QjNNo7icE242lEcBefwWmiQ9nPoWiE2kkBKQKwADA==", "commit"=>"S'inscrire", "id"=>"6"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:95
+Redirected to http://localhost:3000/event_payement/6
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/event_payement/6" for 127.0.0.1 at 2018-05-08 22:19:20 +0200
+Processing by EventsController#show_payement as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:95
+  Rendering events/show_payement.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show_payement.html.erb:19
+  Rendered events/show_payement.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.3ms)
+
+
