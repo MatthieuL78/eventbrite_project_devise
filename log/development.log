@@ -22435,3 +22435,19 @@ Processing by EventsController#show_payement as HTML
 Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/event_payement/8" for 127.0.0.1 at 2018-05-08 21:10:00 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/malus/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#show_payement as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:92
+  Rendering events/show_payement.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show_payement.html.erb:19
+  Rendered events/show_payement.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 277ms (Views: 250.5ms | ActiveRecord: 1.4ms)
+
+
