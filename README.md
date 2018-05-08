@@ -4,6 +4,7 @@ Ce projet permet de créer des utilisateurs, d'utiliser leurs sessions pour cré
 Nous avons 3 models : User, Event et EventAttendee.
 
 * Le payement ne fonctionne pas, problème de clé publique ou autre ...
+* Le code d'accès pour s'enregistrer est : thpevent
 
 ## Presentation du projet
 * Inscription, connexion et deconnexion
@@ -31,6 +32,9 @@ On y utilise les méthodes suivantes :
 * Resources : users, events
 * On utilise les gems devise et stripe
 * CSS : Bootstrap
+
+## Heroku :
+* https://arcane-mesa-20328.herokuapp.com/
 
 ## CSS
 Le CSS est dans le assets/stylesheets/application.css
