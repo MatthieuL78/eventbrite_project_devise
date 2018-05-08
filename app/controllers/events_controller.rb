@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :subscribe, :create_payement, :show_payement, :payement_succeed]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :subscribe, :create_payement, :show_payement]
 
   def index
     @events = Event.all
@@ -11,6 +11,9 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+  end
+
+  def payment_succeed
   end
 
   def edit() end
@@ -49,17 +52,10 @@ class EventsController < ApplicationController
 
   def subscribe
     if @event.price == 0
-      @event = event_subscribe 
-      redirect_to event_path
+      event_subscribe 
     else
       redirect_to subscribe_show_path(@event.id)
     end
-  end
-
-  def show_payement() end
-
-  def payement_succeed() 
-    @event = event_subscribe 
   end
 
   def create_payement
@@ -68,7 +64,7 @@ class EventsController < ApplicationController
     charge = create_charge
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to payement_succeed_path(@event.id)
+      redirect_to event_path(@event.id)
   end
 
   def create_customer
@@ -112,6 +108,7 @@ class EventsController < ApplicationController
   def event_check_current_user_index() end
 
   def event_subscribe
-    Event.find(params[:id]).attendees << current_user
+    @event.attendees << current_user
+    redirect_to payement_succeed_path
   end
 end
