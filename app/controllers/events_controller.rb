@@ -61,14 +61,14 @@ class EventsController < ApplicationController
   def create_payement
     @amount = @event.price
     customer = Stripe::Customer.create(
-      email: params[:stripeEmail],
-      source: params[:stripeToken]
+      :email => params[:stripeEmail],
+      :source => params[:stripeToken]
     )
     charge = Stripe::Charge.create(
-      customer:    @customer.id,
-      amount:      @amount,
-      description: 'Votre paiement',
-      currency:    'usd'
+      :customer =>    customer.id,
+      :amount =>      @amount,
+      :description => 'Votre paiement',
+      :currency =>    'usd'
     )
     
     rescue Stripe::CardError => e
@@ -97,8 +97,6 @@ class EventsController < ApplicationController
   def event_check_current_user
     true if @event.creator == current_user
   end
-
-  def event_check_current_user_index() end
 
   def event_subscribe
     @event.attendees << current_user
