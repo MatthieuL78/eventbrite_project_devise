@@ -59,7 +59,7 @@ class EventsController < ApplicationController
   end
 
   def create_payement
-    @amount = @event.price
+    @amount = Integer(@event.price)
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source => params[:stripeToken]
