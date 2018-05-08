@@ -62,9 +62,7 @@ class EventsController < ApplicationController
     @amount = @event.price
     @customer = create_customer
     charge = create_charge
-    if charge.save
-      event_subscribe
-    end
+    event_subscribe
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to event_path(@event.id)
