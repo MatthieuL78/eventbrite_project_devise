@@ -59,7 +59,6 @@ class EventsController < ApplicationController
   def show_payement() end
 
   def create_payement
-    Stripe.api_key = 'sk_test_BQokikJOvBiI2HlWgH4olfQ2'
     @amount = @event.price
     @customer = create_customer
     charge = create_charge
