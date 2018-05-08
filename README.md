@@ -1,14 +1,15 @@
 # Eventbrite_like
 
-Ce projet permet de créer des utilisateurs, d'utiliser leurs sessions pour créer des evenements.
+Ce projet permet de créer des utilisateurs, d'utiliser leurs sessions pour créer des evenements et de s'inscrire à une soirée en payant.
 Nous avons 3 models : User, Event et EventAttendee.
 
-* Le payement ne fonctionne pas, problème de clé publique ou autre ...
 * Le code d'accès pour s'enregistrer est : thpevent
+* 3 utilisateurs sont déjà crée : jack@jack.com, roger@roger.com, peter@peter.com, mot de passe : yoloyolo
 
 ## Presentation du projet
 * Inscription, connexion et deconnexion
 * Un utilisateur connecté peut créer un evenement
+* Un utilisateur peut participer à une soirée en payant
 
 ## Lancer le projet
 Pour lancer le projet, sur le terminal (dans le dossier concerne) :
