@@ -62,8 +62,7 @@ class EventsController < ApplicationController
     @amount = @event.price
     @customer = create_customer
     @charge = create_charge
-    p @customer
-    p @charge
+    redirect_to event_path
     if @charge.save
       event_subscribe
     end
