@@ -93,7 +93,7 @@ class EventsController < ApplicationController
 
   def event_params_update
     params.require(:event).permit(
-      :name, :date, :place, :price, :description)
+      :name, :date, :place, :price * 100, :description)
   end
 
   def event_check_current_user
